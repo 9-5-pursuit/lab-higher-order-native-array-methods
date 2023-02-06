@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand",
-    "watch": "jest --watch-all"
+    "watch": "jest --watch-all",
+    "test-1": "jest --watch-all __tests__/01-forEach.test.js",
+    "test-2": "jest --watch-all __tests__/02-map.test.js",
+    "test-3": "jest --watch-all __tests__/03-filter.test.js",
+    "test-4": "jest --watch-all __tests__/04-find.test.js",
+    "test-5": "jest --watch-all __tests__/05-some-every.test.js",
+    "test-6": "jest --watch-all __tests__/06-sort.test.js"
   },
   "keywords": [],
   "author": "",
