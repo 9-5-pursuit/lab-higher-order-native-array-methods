@@ -15,7 +15,7 @@ const exampleSongData = require("../data/songs");
  */
 function allSongsAreOverTwoMinutes(songs) {
 
-  return songs.every(item => item.runtimeInSeconds>120) ? true : false
+  return songs.every(item => item.runtimeInSeconds>120)
 }
 
 /**
@@ -25,7 +25,7 @@ function allSongsAreOverTwoMinutes(songs) {
  */
 function anySongIsOverFourMinutes(songs) {
 
-  return songs.some(item => item.runtimeInSeconds>240) ? true : false
+  return songs.some(item => item.runtimeInSeconds>240)
 }
 
 /**
@@ -35,7 +35,7 @@ function anySongIsOverFourMinutes(songs) {
  */
 function anySongIsByPeanut(songs) {
 
-  return songs.some(item => item.artist=='Peanut') ? true : false
+  return songs.some(item => item.artist=='Peanut')
 }
 
 module.exports = {
