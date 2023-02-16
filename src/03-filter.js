@@ -34,7 +34,6 @@ function getSongsOverThreeMinutes(songs) {
 function getTitleTracks(songs) {
   return songs.filter((song) => song.title === song.album);
 }
-console.log(getTitleTracks(exampleSongData));
 
 module.exports = {
   getSongsBySaib,
