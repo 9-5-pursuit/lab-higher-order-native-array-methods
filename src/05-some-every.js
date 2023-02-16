@@ -13,21 +13,42 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {boolean}
  */
-function allSongsAreOverTwoMinutes(songs) {}
+
+// Using every to iterate over an array of songs and return true if every song is over two minutes. every is better when you want to return a boolean value based on a condition that must be true for every element in the array.
+function allSongsAreOverTwoMinutes(songs) {
+  const allSongsAreOverTwoMinutes = songs.every((song) => {
+    return song.runtimeInSeconds > 120;
+  });
+  return allSongsAreOverTwoMinutes;
+}
 
 /**
  * Returns `true` if any song is over four minutes. Otherwise, return `false`.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {boolean}
  */
-function anySongIsOverFourMinutes(songs) {}
+
+// Using some to iterate over an array of songs and return true if any song is over four minutes. some is better when you want to return a boolean value based on a condition that must be true for at least one element in the array.
+function anySongIsOverFourMinutes(songs) {
+  const anySongIsOverFourMinutes = songs.some((song) => {
+    return song.runtimeInSeconds > 240;
+  });
+  return anySongIsOverFourMinutes;
+}
 
 /**
  * Returns `true` if any song is by the artist "Peanut". Otherwise, return `false`.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {boolean}
  */
-function anySongIsByPeanut(songs) {}
+
+// Using some to iterate over an array of songs and return true if any song is by the artist "Peanut".
+function anySongIsByPeanut(songs) {
+  const anySongIsByPeanut = songs.some((song) => {
+    return song.artist === "Peanut";
+  });
+  return anySongIsByPeanut;
+}
 
 module.exports = {
   allSongsAreOverTwoMinutes,

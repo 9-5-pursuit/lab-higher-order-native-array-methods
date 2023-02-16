@@ -13,7 +13,14 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByRuntimeAscending(songs) {}
+
+// Using sort to iterate over an array of songs and return an array of all songs ordered by their runtime. sort is better when you want to return a new array with the elements from the original array in a different order.
+function sortByRuntimeAscending(songs) {
+  const songsByRuntimeAscending = songs.sort((songA, songB) => {
+    return songA.runtimeInSeconds - songB.runtimeInSeconds;
+  });
+  return songsByRuntimeAscending;
+}
 
 /**
  * Reorders the array so that the song objects are organized by their artist name. The artist that comes last in the alphabet should come first.
@@ -23,7 +30,14 @@ function sortByRuntimeAscending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByArtistNameDescending(songs) {}
+
+// Using sort to iterate over an array of songs and return an array of all songs ordered by their artist name. sort is better when you want to return a new array with the elements from the original array in a different order.
+function sortByArtistNameDescending(songs) {
+  const songsByArtistNameDescending = songs.sort((songA, songB) => {
+    return songB.artist.localeCompare(songA.artist);
+  });
+  return songsByArtistNameDescending;
+}
 
 /**
  * Reorders the array so that the song objects are organized by their song title. The title that comes first in the alphabet should come first.
@@ -33,7 +47,14 @@ function sortByArtistNameDescending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortBySongTitleAscending(songs) {}
+
+// Using sort to iterate over an array of songs and return an array of all songs ordered by their song title. sort is better when you want to return a new array with the elements from the original array in a different order.
+function sortBySongTitleAscending(songs) {
+  const songsBySongTitleAscending = songs.sort((songA, songB) => {
+    return songA.title.localeCompare(songB.title);
+  });
+  return songsBySongTitleAscending;
+}
 
 module.exports = {
   sortByRuntimeAscending,
