@@ -12,7 +12,13 @@ const exampleSongData = require("../data/songs");
  * Logs out all of the song titles.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  */
-function printAllSongTitles(songs) {}
+//use the variable created for the songs array in order to use the forEach() method... loop through each element of the array. Each element can now be accessed by using the variable we placed in the parenthesis of the forEach() function that we executed...so now we will console.log() the titles by using dot notation to access the titles
+
+function printAllSongTitles(songs) {
+  songs.forEach((element) => {
+    console.log(element.title);
+  });
+}
 
 /**
  * Logs out the song title and song artist.
@@ -24,7 +30,11 @@ function printAllSongTitles(songs) {}
  *  //> "Up by Sebastian Kamae"
  *  //> ...
  */
-function printSongDetails(songs) {}
+function printSongDetails(songs) {
+  songs.forEach((element) => {
+    console.log(`${element.title} by ${element.artist}`);
+  });
+}
 
 /**
  * Logs out all of the song titles which have a runtime over three minutes.
