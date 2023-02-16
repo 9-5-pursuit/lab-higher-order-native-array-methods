@@ -14,7 +14,7 @@ const exampleSongData = require("../data/songs");
  * @returns {Object[]}
  */
 function sortByRuntimeAscending(songs) {
-  return songs.sort();
+  return songs.sort((a,b) => {return a.runtimeInSeconds - b.runtimeInSeconds;});
 }
 
 /**
@@ -26,7 +26,17 @@ function sortByRuntimeAscending(songs) {
  * @returns {Object[]}
  */
 function sortByArtistNameDescending(songs) {
-  return songs.sort();
+  return songs.sort((a,b) => {
+    let nameA = a.artist.toLowerCase();
+    let nameB = b.artist.toLowerCase();
+  if (nameB < nameA) {
+    return -1;
+  }
+  if (nameB > nameA) {
+    return 1;
+  }
+  return 0;  
+  });
 }
 
 /**
@@ -38,7 +48,17 @@ function sortByArtistNameDescending(songs) {
  * @returns {Object[]}
  */
 function sortBySongTitleAscending(songs) {
-  return songs.sort();
+  return songs.sort((a,b) => {
+    let titleA = a.title.toLowerCase();
+    let titleB = b.title.toLowerCase();
+    if (titleA < titleB) {
+      return -1;
+    }
+    if (titleA > titleB) {
+      return 1;
+    }
+    return 0;  
+  });
 }
 
 module.exports = {
