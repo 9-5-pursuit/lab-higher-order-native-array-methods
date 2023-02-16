@@ -16,7 +16,6 @@ function printAllSongTitles(songs) {
   songs.forEach((song) => {
     console.log(song.title);
   });
-  //
 }
 
 /**
