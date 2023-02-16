@@ -13,21 +13,42 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object} A single object.
  */
-function findPinkElephantsByTimestreet(songs) {}
+
+// Using find to iterate over an array of songs and return the song "Pink Elephants" from the song array, if it is in the array. find is better when you want to return a single element from the array.
+function findPinkElephantsByTimestreet(songs) {
+  const pinkElephants = songs.find((song) => {
+    return song.title === "Pink Elephants" && song.artist === "Timestreet";
+  });
+  return pinkElephants;
+}
 
 /**
  * Returns the first song in the list that is under three minutes.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object} A single object.
  */
-function findFirstSongUnderThreeMinutes(songs) {}
+
+// Using find to iterate over an array of songs and return the first song in the list that is under three minutes.
+function findFirstSongUnderThreeMinutes(songs) {
+  const firstSongUnderThreeMinutes = songs.find((song) => {
+    return song.runtimeInSeconds < 180;
+  });
+  return firstSongUnderThreeMinutes;
+}
 
 /**
  * Returns the first song in the list where the song title equals the song album.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object} A single object.
  */
-function findFirstTitleTrack(songs) {}
+
+// Using find to iterate over an array of songs and return the first song in the list where the song title equals the song album.
+function findFirstTitleTrack(songs) {
+  const firstTitleTrack = songs.find((song) => {
+    return song.title === song.album;
+  });
+  return firstTitleTrack;
+}
 
 module.exports = {
   findPinkElephantsByTimestreet,
