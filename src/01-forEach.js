@@ -36,7 +36,7 @@ function printSongDetails(songs) {
  */
 function printSongTitlesOverThreeMinutes(songs) {
   songs.forEach((ele) => {
-    if (ele.runTimeInSeconds > 180) console.log(ele.title);
+    if (ele.runtimeInSeconds > 180) console.log(ele.title);
   });
 }
 
