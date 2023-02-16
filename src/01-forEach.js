@@ -13,7 +13,7 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  */
 
-// Using forEach to iterate over an array of songs and log out the title of each song.
+// Using forEach to iterate over an array of songs and log out the title of each song. why use forEach instead of map? forEach is better when you want to do something to each element in the array, but map is better when you want to return a new array with the same number of elements as the original array.
 function printAllSongTitles(songs) {
   songs.forEach((song) => {
     console.log(song.title);
