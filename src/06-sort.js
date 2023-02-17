@@ -5,6 +5,7 @@
 
   Keep in mind that your functions must still have and use a parameter for accepting all songs.
 */
+const songs = require("../data/songs");
 const exampleSongData = require("../data/songs");
 // Do not change the line above.
 
@@ -13,7 +14,12 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByRuntimeAscending(songs) {}
+function sortByRuntimeAscending(songs) {
+  let sorted = songs.sort((element1, element2) => {
+    return element1.runtimeInSeconds - element2.runtimeInSeconds;
+  });
+  return sorted;
+}
 
 /**
  * Reorders the array so that the song objects are organized by their artist name. The artist that comes last in the alphabet should come first.
@@ -23,7 +29,21 @@ function sortByRuntimeAscending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByArtistNameDescending(songs) {}
+function sortByArtistNameDescending(songs) {
+  songs.sort((element1, element2) => {
+    let names1 = element1.artist.toLowerCase();
+    let names2 = element2.artist.toLowerCase();
+    if (names1 < names2) {
+      return -1;
+    }
+    if (names1 > names2) {
+      return 1;
+    }
+  });
+
+  songs.reverse();
+  return songs;
+}
 
 /**
  * Reorders the array so that the song objects are organized by their song title. The title that comes first in the alphabet should come first.
@@ -33,7 +53,21 @@ function sortByArtistNameDescending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortBySongTitleAscending(songs) {}
+function sortBySongTitleAscending(songs) {
+  let sorted = songs.sort((element1, element2) => {
+    let names1 = element1.title.toUpperCase();
+    let names2 = element2.title.toUpperCase();
+    if (names1 < names2) {
+      return -1;
+    }
+    if (names1 > names2) {
+      return 1;
+    }
+
+    return element1 - element2;
+  });
+  return songs;
+}
 
 module.exports = {
   sortByRuntimeAscending,
