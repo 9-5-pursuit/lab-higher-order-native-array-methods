@@ -13,7 +13,7 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  */
 function printAllSongTitles(songs) {
-  songs.forEach(function (element, index) {
+  songs.forEach(function (element) {
     console.log(element.title);
   });
 }
