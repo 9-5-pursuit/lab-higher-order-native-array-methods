@@ -33,8 +33,8 @@ function sortByRuntimeAscending(songs) {
  */
 function sortByArtistNameDescending(songs) {
   let result = songs.sort((a, b) => {
-    const nameA = a.artist.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.artist.toUpperCase(); // ignore upper and lowercase
+    const nameA = a.artist.toUpperCase(); 
+    const nameB = b.artist.toUpperCase(); 
     if (nameA > nameB) {
       return -1;
     }
@@ -58,8 +58,8 @@ function sortByArtistNameDescending(songs) {
  */
 function sortBySongTitleAscending(songs) {
   let result = songs.sort((a, b) => {
-    const nameA = a.title.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+    const nameA = a.title.toUpperCase(); 
+    const nameB = b.title.toUpperCase();
     if (nameA < nameB) {
       return -1;
     }
@@ -67,7 +67,6 @@ function sortBySongTitleAscending(songs) {
       return 1;
     }
   
-    // names must be equal
     return 0;
   });
 

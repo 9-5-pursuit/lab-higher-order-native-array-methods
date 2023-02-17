@@ -60,18 +60,6 @@ function getTitleAndArtist(songs) {
 
     array.push({[song.title] : song.artist })
   });
-  // function getLongestDinosaur(dinosaurs) {
-
-  //   let obj = {}
-  //   if ( !dinosaurs.length )return obj
-  //   let arr =[...dinosaurs].sort((a, b) => a.lengthInMeters - b.lengthInMeters).pop()
-  //   for (let i = 0; i < dinosaurs.length; i++){
-  //     if( arr.lengthInMeters === dinosaurs[i].lengthInMeters) {
-  //       obj[dinosaurs[i].name] = dinosaurs[i].lengthInMeters * 3.281   
-  //      break}
-  //   }
-  //   return obj
-  // }
   return array
 }
 
