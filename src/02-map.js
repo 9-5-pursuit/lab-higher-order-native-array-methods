@@ -13,7 +13,16 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {string[]} An array of strings, all of which are song titles.
  */
-function getSongTitles(songs) {}
+function getSongTitles(songs) {
+  let array = []
+  
+  songs.map((song) => {
+    array.push(song.title)
+  });
+
+  return array
+
+}
 
 /**
  * Returns an array of all of the song titles with the artist.
@@ -24,7 +33,16 @@ function getSongTitles(songs) {}
  *  getSongDetails(songs);
  *  //> [ "Berlin Tsukin by Taiyo Ky", "Up by Sebastian Kamae", ... ]
  */
-function getSongDetails(songs) {}
+function getSongDetails(songs) {
+  let array = []
+  
+  songs.map((song) => {
+    array.push(`${song.title} by ${song.artist}`)
+  });
+
+  return array
+
+}
 
 /**
  * Returns an array of objects, where each object has a key that is the song title and has a value that is the song artist.
@@ -35,7 +53,27 @@ function getSongDetails(songs) {}
  *  getTitleAndArtist(songs);
  *  //> [ { "Berlin Tsukin": "Taiyo Ky" }, { Up: "Sebastian Kamae" }, ... ]
  */
-function getTitleAndArtist(songs) {}
+function getTitleAndArtist(songs) {
+  let array = []
+  
+  songs.map((song) => {   
+
+    array.push({[song.title] : song.artist })
+  });
+  // function getLongestDinosaur(dinosaurs) {
+
+  //   let obj = {}
+  //   if ( !dinosaurs.length )return obj
+  //   let arr =[...dinosaurs].sort((a, b) => a.lengthInMeters - b.lengthInMeters).pop()
+  //   for (let i = 0; i < dinosaurs.length; i++){
+  //     if( arr.lengthInMeters === dinosaurs[i].lengthInMeters) {
+  //       obj[dinosaurs[i].name] = dinosaurs[i].lengthInMeters * 3.281   
+  //      break}
+  //   }
+  //   return obj
+  // }
+  return array
+}
 
 module.exports = {
   getSongTitles,
