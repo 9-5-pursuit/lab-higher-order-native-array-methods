@@ -12,7 +12,12 @@ const exampleSongData = require("../data/songs");
  * Logs out all of the song titles.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  */
-function printAllSongTitles(songs) {}
+/**
+ * I used the forEach() method to check each element in the given array for a song title to log.
+ */
+function printAllSongTitles(songs) {
+  songs.forEach(element => console.log(element.title));
+}
 
 /**
  * Logs out the song title and song artist.
@@ -24,13 +29,23 @@ function printAllSongTitles(songs) {}
  *  //> "Up by Sebastian Kamae"
  *  //> ...
  */
-function printSongDetails(songs) {}
+/**
+ * I used the forEach() method to check each element in the given array for a song title and artist of the song to log.
+ */
+function printSongDetails(songs) {
+  songs.forEach(element => console.log(`${element.title} by ${element.artist}`));
+}
 
 /**
  * Logs out all of the song titles which have a runtime over three minutes.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  */
-function printSongTitlesOverThreeMinutes(songs) {}
+/**
+ * I used the forEach() method to check each element of the given array for the 'runtimeInSeconds' and check if the time was greater than 3 minutes (180 seconds) and if the song strictly met this requirement then the title would be logged.
+ */
+function printSongTitlesOverThreeMinutes(songs) {
+  songs.forEach(element => element.runtimeInSeconds > 180 === console.log(element.title));
+}
 
 module.exports = {
   printAllSongTitles,
