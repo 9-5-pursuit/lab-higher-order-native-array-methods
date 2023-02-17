@@ -15,9 +15,7 @@ const exampleSongData = require("../data/songs");
 //use the variable created for the songs array in order to use the forEach() method... loop through each element of the array. Each element can now be accessed by using the variable we placed in the parenthesis of the forEach() function that we executed...so now we will console.log() the titles by using dot notation to access the titles
 
 function printAllSongTitles(songs) {
-  songs.forEach((element) => {
-    console.log(element.title);
-  });
+  songs.forEach((element) => console.log(element.title));
 }
 
 /**
@@ -31,9 +29,9 @@ function printAllSongTitles(songs) {
  *  //> ...
  */
 function printSongDetails(songs) {
-  songs.forEach((element) => {
-    console.log(`${element.title} by ${element.artist}`);
-  });
+  songs.forEach((element) =>
+    console.log(`${element.title} by ${element.artist}`)
+  );
 }
 
 /**
