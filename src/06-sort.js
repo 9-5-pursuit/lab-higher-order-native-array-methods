@@ -25,6 +25,8 @@ let sortByRuntimeAscending = (songs) =>
  *
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
+ * -----------------------------------------
+ * - ternary to return a < b if true comes back as 1 gets put at the end if false returns -1 or 0 depending on which it is
  *
  */
 let sortByArtistNameDescending = (songs) =>
@@ -50,6 +52,8 @@ let sortByArtistNameDescending = (songs) =>
  *
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
+ * -----------------------------------------
+ * - ternary to return a < b if true comes back as -1 gets put at the end if false returns 1 or 0 depending on which it is
  */
 let sortBySongTitleAscending = (songs) =>
   songs.sort((songA, songB) => {
