@@ -13,24 +13,42 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {boolean}
  */
-function allSongsAreOverTwoMinutes(songs) {}
+function allSongsAreOverTwoMinutes(songs) {
+  // I think my variable names almost tell the story better than I could with comments ;)  This one checks for runtimeInSeconds values that are greater than 120 (2 minutes).
+  const checkRuntimeInSecondsOverTwoMinutes = songs.every((song) => {
+    return song.runtimeInSeconds > 120;
+  });
+  return checkRuntimeInSecondsOverTwoMinutes;
+}
 
 /**
  * Returns `true` if any song is over four minutes. Otherwise, return `false`.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {boolean}
  */
-function anySongIsOverFourMinutes(songs) {}
+function anySongIsOverFourMinutes(songs) {
+  // This one checks for runtimeInSeconds values that are greater than 240 (4 minutes).
+  const checkRuntimeInSecondsOverFourMinutes = songs.some((song) => {
+    return song.runtimeInSeconds > 240;
+  });
+  return checkRuntimeInSecondsOverFourMinutes;
+}
 
 /**
  * Returns `true` if any song is by the artist "Peanut". Otherwise, return `false`.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {boolean}
  */
-function anySongIsByPeanut(songs) {}
+function anySongIsByPeanut(songs) {
+  // This one check for any thing by the artist "Peanut" and returns a boolean value.
+  const songIsByPeanut = songs.some((song) => {
+    return song.artist === "Peanut";
+  });
+  return songIsByPeanut;
+}
 
 module.exports = {
   allSongsAreOverTwoMinutes,
   anySongIsOverFourMinutes,
-  anySongIsByPeanut,
+  anySongIsByPeanut
 };

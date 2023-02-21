@@ -13,7 +13,12 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByRuntimeAscending(songs) {}
+function sortByRuntimeAscending(songs) {
+  let sortedSongsByRuntime = songs.sort((a, b) => {
+    return a.runtimeInSeconds - b.runtimeInSeconds;
+  });
+  return sortedSongsByRuntime;
+}
 
 /**
  * Reorders the array so that the song objects are organized by their artist name. The artist that comes last in the alphabet should come first.
@@ -23,7 +28,29 @@ function sortByRuntimeAscending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByArtistNameDescending(songs) {}
+function sortByArtistNameDescending(songs) {
+  // adding a function for word capitalization that I will use in the sort in the next step.
+  function capitalizeWords(str) {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }
+  // declared new variables to use with the capitalization function. I will use the new variables in my comparison function below. This will be sorting in descending order.
+  return songs.sort((a, b) => {
+    const artistA = capitalizeWords(a.artist);
+    const artistB = capitalizeWords(b.artist);
+    if (artistB < artistA) {
+      return -1;
+    }
+    if (artistB > artistA) {
+      return 1;
+    }
+    return 0;
+  });
+  return;
+}
 
 /**
  * Reorders the array so that the song objects are organized by their song title. The title that comes first in the alphabet should come first.
@@ -33,10 +60,32 @@ function sortByArtistNameDescending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortBySongTitleAscending(songs) {}
+function sortBySongTitleAscending(songs) {
+  // using my word capitalization function again.
+  function capitalizeWords(str) {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }
+  // declared new variables to use with the capitalization function. I will use the new variables in my comparison function. Switched the variables up since this one is sorting in ascending order.
+  return songs.sort((a, b) => {
+    const titleA = capitalizeWords(a.title);
+    const titleB = capitalizeWords(b.title);
+    if (titleA < titleB) {
+      return -1;
+    }
+    if (titleA > titleB) {
+      return 1;
+    }
+    return 0;
+  });
+  return;
+}
 
 module.exports = {
   sortByRuntimeAscending,
   sortByArtistNameDescending,
-  sortBySongTitleAscending,
+  sortBySongTitleAscending
 };

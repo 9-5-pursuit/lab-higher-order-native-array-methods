@@ -1,7 +1,7 @@
 const {
   getSongTitles,
   getSongDetails,
-  getTitleAndArtist,
+  getTitleAndArtist
 } = require("../src/02-map");
 
 describe("getSongTitles()", () => {
@@ -28,7 +28,7 @@ describe("getSongTitles()", () => {
       "Regular Guy",
       "In the Middle of Nowhere",
       "Pink Elephants",
-      "Kyona",
+      "Kyona"
     ];
     expect(actual).toEqual(expected);
   });
@@ -58,7 +58,7 @@ describe("getSongDetails()", () => {
       "Regular Guy by Peanut",
       "In the Middle of Nowhere by Soulaced",
       "Pink Elephants by Timestreet",
-      "Kyona by Two Sleepy",
+      "Kyona by Two Sleepy"
     ];
     expect(actual).toEqual(expected);
   });
@@ -88,7 +88,7 @@ describe("getTitleAndArtist()", () => {
       { "Regular Guy": "Peanut" },
       { "In the Middle of Nowhere": "Soulaced" },
       { "Pink Elephants": "Timestreet" },
-      { Kyona: "Two Sleepy" },
+      { Kyona: "Two Sleepy" }
     ];
     expect(actual).toEqual(expected);
   });
