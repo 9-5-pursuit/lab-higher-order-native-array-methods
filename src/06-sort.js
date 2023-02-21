@@ -13,7 +13,12 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByRuntimeAscending(songs) {}
+function sortByRuntimeAscending(songs) {
+  songs.sort((element, element2) => {
+  return element.runtimeInSeconds - element2.runtimeInSeconds;
+  })
+  return songs
+}
 
 /**
  * Reorders the array so that the song objects are organized by their artist name. The artist that comes last in the alphabet should come first.
@@ -23,7 +28,29 @@ function sortByRuntimeAscending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortByArtistNameDescending(songs) {}
+function sortByArtistNameDescending(songs) {
+
+  songs.sort((element, element2) => {
+   let lowCaseArt = element.artist.toLowerCase()
+   let lowCaseArt2 = element2.artist.toLowerCase()
+   console.log(lowCaseArt.charCodeAt(0) > lowCaseArt2.charCodeAt(0))
+   
+   
+   if  (lowCaseArt < lowCaseArt2) {
+    return 1
+   }
+    if (lowCaseArt2 < lowCaseArt) {
+    return -1
+   }
+    if (lowCaseArt === lowCaseArt2) {
+      return 0
+    }
+
+
+   
+  })
+  return songs
+}
 
 /**
  * Reorders the array so that the song objects are organized by their song title. The title that comes first in the alphabet should come first.
@@ -33,7 +60,24 @@ function sortByArtistNameDescending(songs) {}
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]}
  */
-function sortBySongTitleAscending(songs) {}
+function sortBySongTitleAscending(songs) {
+  songs.sort((element, element2) => {
+    let lowCaseTit = element.title.toLowerCase()
+    let lowCaseTit2 = element2.title.toLowerCase();
+    if (lowCaseTit2 > lowCaseTit) {
+      return -1
+     }
+     if (lowCaseTit > lowCaseTit2) {
+      return 1
+     }
+      if (lowCaseTit === lowCaseTit2) {
+      return 0
+    }
+  })
+  return songs
+
+
+}
 
 module.exports = {
   sortByRuntimeAscending,
