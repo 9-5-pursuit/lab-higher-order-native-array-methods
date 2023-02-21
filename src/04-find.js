@@ -24,6 +24,7 @@ function findPinkElephantsByTimestreet(songs) {
  * @returns {Object} A single object.
  */
 function findFirstSongUnderThreeMinutes(songs) {
+  // if a song exists in the songs array of objects with the runtime under 180s, the first object will be returned that meets this criteria.
   let songUnderThreeMinutes = songs.find((song) => song.runtimeInSeconds < 180);
   return songUnderThreeMinutes;
 }

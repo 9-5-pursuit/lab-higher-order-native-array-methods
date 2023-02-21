@@ -14,6 +14,7 @@ const exampleSongData = require("../data/songs");
  * @returns {boolean}
  */
 function allSongsAreOverTwoMinutes(songs) {
+  // I think my variable names almost tell the story better than I could with comments ;)  This one checks for runtimeInSeconds values that are greater than 120 (2 minutes).
   const checkRuntimeInSecondsOverTwoMinutes = songs.every((song) => {
     return song.runtimeInSeconds > 120;
   });
@@ -26,6 +27,7 @@ function allSongsAreOverTwoMinutes(songs) {
  * @returns {boolean}
  */
 function anySongIsOverFourMinutes(songs) {
+  // This one checks for runtimeInSeconds values that are greater than 240 (4 minutes).
   const checkRuntimeInSecondsOverFourMinutes = songs.some((song) => {
     return song.runtimeInSeconds > 240;
   });
@@ -38,6 +40,7 @@ function anySongIsOverFourMinutes(songs) {
  * @returns {boolean}
  */
 function anySongIsByPeanut(songs) {
+  // This one check for any thing by the artist "Peanut" and returns a boolean value.
   const songIsByPeanut = songs.some((song) => {
     return song.artist === "Peanut";
   });
