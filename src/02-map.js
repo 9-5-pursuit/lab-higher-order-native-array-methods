@@ -29,10 +29,10 @@ function getSongTitles(songs) {
  *  //> [ "Berlin Tsukin by Taiyo Ky", "Up by Sebastian Kamae", ... ]
  */
 function getSongDetails(songs) {
-  let songTitles = songs.map((element, index, array) => {
+  let songDetails = songs.map((element, index, array) => {
     return `${element.title} by ${element.artist}`
   })
-  return songTitles
+  return songDetails
 }
 
 /**
@@ -45,9 +45,10 @@ function getSongDetails(songs) {
  *  //> [ { "Berlin Tsukin": "Taiyo Ky" }, { Up: "Sebastian Kamae" }, ... ]
  */
 function getTitleAndArtist(songs) {
-  let songTitlesArtist = songs.map((element, index, array) => {
-    
-}
+  let titleArtist = songs.map((element, i, array) => {
+    return { [element.title]:element.artist}
+  })
+  return titleArtist
 }
 
 module.exports = {
