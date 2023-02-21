@@ -31,12 +31,10 @@ function sortByRuntimeAscending(songs) {
 function sortByArtistNameDescending(songs) {
 
   let sortedArtist = songs.sort((a,b) => {
-    a.artist = a.artist.toLowerCase()
-    b.artist = b.artist.toLowerCase()
-    if (a.artist > b.artist) {
+    if (a.artist.toLowerCase() > b.artist.toLowerCase()) {
       return -1
     }
-    if (b.artist < a.artist) {
+    if (b.artist.toLowerCase() < a.artist.toLowerCase()) {
       return 1
     }
     return 0
@@ -53,12 +51,10 @@ function sortByArtistNameDescending(songs) {
  */
 function sortBySongTitleAscending(songs) {
   let sortedTitle = songs.sort((a,b) => {
-  a.title = a.title.toUpperCase()
-  b.title = b.title.toUpperCase()
-  if (a.title > b.title) {
+  if (a.title.toUpperCase() > b.title.toUpperCase()) {
     return 1
   }
-  if (b.title < a.title) {
+  if (a.title.toUpperCase() < b.title.toUpperCase()) {
     return -1
   }
   return 0
