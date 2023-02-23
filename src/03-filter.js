@@ -29,7 +29,7 @@ function getSongsBySaib(songs) {
  */
 function getSongsOverThreeMinutes(songs) {
   let overThreeMin = songs.filter((song) => {
-    if (song.runtimeInSeconds > 18) {
+    if (song.runtimeInSeconds > 180) {
       return song;
     }
   });
