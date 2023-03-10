@@ -45,7 +45,7 @@ const getSongDetails = (songs) => songs.map((songDetails) => `${songDetails.titl
 function getTitleAndArtist(songs) {
 // const getTitleAndArtist = (songs) => songs.map((songTitleAndArtist) => [songTitleAndArtist.title]: songTitleAndArtist.artist);
 
-  songs.map((songTitleAndArtist) => {
+  return songs.map((songTitleAndArtist) => {
     return {[songTitleAndArtist.title]: songTitleAndArtist.artist
     }
   });
